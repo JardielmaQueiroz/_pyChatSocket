@@ -1,0 +1,114 @@
+﻿-------------------------------------------------- Aplicação Cliente/Servidor - Socket Python ---------------------------------------------------
+
+Trabalho desenvolvido pelos alunos (Jardielma Q. De Lima e Douglas Inácio) como atividade complementar da 
+disciplina de Redes de computadores do curso de Sistema de Informação do IFES, ministrada  pelo Professor Gilma
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+1- Informações Gerais:
+	-porta: 3333;
+	-host: 127.0.0.1;
+	-Socket TCP/IP padrão IPV 4;
+	-Arquitetura Cliente/Servidor
+
+2- Como executar a aplicação:
+
+	obs: Para que o programa funcione corretamente o arquivo usuarios.txt, deve permanecer na mesma
+	pasta que o aquivo Servidor.py e além disso deve permanecer no padrão(um nome em cada linha),
+	caso o contrário vai da erro.
+	
+	2.1 - Primeiro execute o arquivo: (Servidor.py)
+		
+		- quando o arquivo Servidor.py é executado ele cria o mecanismo de Socket para receber a conexão,
+		esse mecanismo é configurado para ouvir a porta 3333 rodando encima do protocolo TCP, além disso,
+		é configurando para receber conexão de qualquer IP que peça para se conectar.
+		
+		- Após o mecanisno socket ja configurado e ja ouvindo a porta, vai ser mostrado para o usuário
+		a seguinte menssagem: 
+			
+			---------- Servidor Unicializado - Aguardando alguém se conectar! -------------
+			Aguardando...
+			
+		essa significa que o servidor ja foi inicializado e ele espera que alguém estabeleça a coneção. Para 
+		que alguém tente conectar-se ao servidor é necessário (EXECUTAR o aquivo Cliente.py), que é o aquivo
+		responsável por intermediar as operações disponiveis para o cliente.
+		
+		- Quando o Cliente.py é executado o cliente estabe-se a conecção direto com o servidor no  endereço
+		('127.0.0.1', porta 3333) rodando encima de TCP, é mostrado na tela do Servidor.py os detalhes da 
+		conexão.
+		
+		- Após estabelecer a conexão o cliente pede para o usuario entrar com seu nome de login e envia uma
+		menssagem para o servidor, essa messagem possui a 
+		seguinte estrutura:
+		
+			{'usuario': usuario, 'operacao': operacao }
+		
+		essa estrutura é um dicionário que contém o nome do usuário e a operação que ele deseja pedir ao servido
+		
+		- Quando essa menssagem chega no servidor, o sevidor irá analisar a operação e verificar ser o login 
+		informado pelo cliente é válido,caso não seja ele ficará pedido para o usuário verificar o login até que 
+		ele digite um login valido ou feche o programa. Se for válido, ele disponibiliza na tela do cliente
+		uma menssagem que representa um menu, veja abaixo:
+		
+			************************************** MENU ***********************************
+				1: Enviar Menssagem	2: Ler Menssagem	3: Sair
+			************************************** **** ***********************************
+		
+		- Após aprensentar a menssagem acima vai aparecer:
+			
+			>>
+			
+		- Esse símbolo significa que o cliente está esperando o usuário digitar um dos numeros correspondente a operação
+		que ele deseja realizar.
+		
+			obs: Após cada dado informado a tecla enter dever ser utilizada para continuar a execução.
+		
+		- Se digitada: 
+		
+			>> 1
+		
+				- vai aparecer:
+		
+					Informa o destinatario: 
+			
+				- onde dever ser informado o nome do usuário para quem deseja mandar a menssagem, apos digitar o destinatário e apertar
+				enter para continuar vai aparecer:
+		
+					Digite sua msg:
+			
+				- onde você irá escrever a menssagem que deseja enviar, após apertar a tecla enter, o usuário recebe um feedback, informando
+				sucesso ou fala a entregar a messagem, após essa menssagem ele retorna para o "menu". 
+			
+		- Esse símbolo representa que estou novamento no menu esperando que uma dos números correspondente a função que quero executar.
+		
+			>>
+			
+		- Se digitada: 
+		
+			>> 2
+				- as mensagens serão deletadas uma a uma apóes efetuada a leitura
+				- vai aparecer caso haja menssagens sem ler:
+					
+					"Usuário" você possui "x" mensagem(s)!
+					
+					--------------------------------------- 
+					Remetente: usuário
+					Menssagem: testando
+					--------------------------------------- 
+					Remetente: usuário
+					Menssagem: testando
+					---------------------------------------
+					
+				- caso não tenha vai aparecer:
+					"Usuário" você possui 0 mensagem(s)!
+					
+				
+				- após mostrar as menssagem ele retorna para o "menu".
+		
+		- Se digitada: 
+		
+			>> 3
+			
+				- Fecha a conexão com o servidor.
+				- Após isso feche a janela do cliente normalmente ou apertar enter.
+---------------------------------------------------------------------------- 2017 -----------------------------------------------------		
