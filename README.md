@@ -1,5 +1,5 @@
 # _pyChatSocket_
-<P align="justify">&nbsp&nbsp Chat simples utilizando a biblioteca de programação Socket na linguagem Python, com um lado do cliente e um lado do servidor.</p>
+<P align="justify">&nbsp&nbsp Chat simples utilizando a biblioteca de programação Socket na linguagem Python, com um lado do cliente e um lado do servidor. Atividade desenvolvida na disciplina de Redes no semestre 2017/1.</p>
 
 ### 1. OBJETIVO<br>
 <P align="justify">&nbsp&nbsp O objetivo do trabalho é desenvolver uma aplicação cliente/servidor, utilizando a biblioteca de programação Socket na linguagen Python.</p>
